@@ -21,19 +21,24 @@ La demostración utiliza StarUML como herramienta CASE para construir un modelo 
 
 El Proyecto Fin de Curso corresponde a un **Sistema de Gestión para un Gimnasio**, diseñado para apoyar el control de clientes, membresías, pagos, productos, inventario, rutinas y demás operaciones relacionadas con la administración del establecimiento.
 
-### Subsistema modelado
+## Subsistema modelado
 
-Para la demostración se seleccionó el subsistema de **[COLOCAR SUBSISTEMA DEFINITIVO]**.
+Para la demostración se seleccionó el subsistema de **gestión de clientes, membresías y pagos** del Sistema de Gestión para un Gimnasio. Este subsistema concentra los procesos necesarios para registrar a los clientes, administrar los planes disponibles, asignar y renovar membresías, controlar su vigencia y registrar los pagos realizados.
 
-Este subsistema comprende las siguientes funciones:
+### Procesos principales
 
-- [FUNCIÓN 1].
-- [FUNCIÓN 2].
-- [FUNCIÓN 3].
-- [FUNCIÓN 4].
+El subsistema comprende los siguientes procesos:
 
-El modelo UML contiene al menos seis clases del dominio, con atributos tipados, operaciones, visibilidad, relaciones y cardinalidades.
+- Registrar y actualizar la información de los clientes.
+- Crear y consultar los planes de membresía disponibles.
+- Asignar y renovar membresías de acuerdo con el plan seleccionado.
+- Consultar el estado y la fecha de vencimiento de una membresía.
+- Registrar los pagos efectuados por los clientes.
+- Generar o asociar un comprobante al pago registrado.
 
+El modelo UML estará conformado por clases relevantes del dominio, como `Cliente`, `Membresia`, `PlanMembresia`, `Pago`, `Comprobante` y `Empleado`. Estas clases contendrán atributos tipados, operaciones con firma completa, visibilidad, relaciones y cardinalidades coherentes con el funcionamiento del sistema.
+
+A partir de este modelo se generará automáticamente código fuente C# mediante StarUML y posteriormente se verificará su compilación, ejecución y regeneración controlada.
 ## Integrantes y responsabilidades
 
 | Integrante | Responsabilidad principal |
