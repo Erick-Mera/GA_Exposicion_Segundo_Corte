@@ -1,4 +1,6 @@
-# Exposición MDD con StarUML: generación de código a partir de modelos UML
+# Generación de código C# desde modelos UML con StarUML
+
+Repositorio de la exposición-demostración del ciclo de desarrollo dirigido por modelos (MDD), aplicado al subsistema de clientes, membresías y pagos del **Sistema de Gestión para un Gimnasio**.
 
 ## Información académica
 
@@ -7,131 +9,125 @@
 - **Asignatura:** Ingeniería de Requisitos (ISR-401)
 - **Docente:** Ing. Gleiston Guerrero Ulloa, PhD.
 - **Periodo académico:** 2026-2027 PPA
-- **Paralelo:** [COLOCAR PARALELO]
-- **Herramienta CASE:** StarUML
+- **Paralelo:** 4.º Software A
+- **Proyecto Fin de Curso:** Sistema de Gestión para un Gimnasio
+- **Herramienta MDD:** StarUML
 - **Lenguaje objetivo:** C#
+- **Repositorio:** <https://github.com/Erick-Mera/GA_Exposicion_Segundo_Corte>
 
-## Descripción del proyecto
+## Descripción
 
-Este repositorio contiene los modelos UML, archivos de configuración, código generado, evidencias, informe LaTeX y diapositivas correspondientes a la exposición-demostración sobre desarrollo dirigido por modelos o Model-Driven Development (MDD).
+El proyecto demuestra cómo un modelo UML puede utilizarse como fuente para generar código C#. El proceso comprende la construcción y validación del modelo, la configuración del generador, la creación automática de archivos `.cs`, su compilación y ejecución en .NET y un roundtrip controlado para comprobar la trazabilidad entre el modelo y el código.
 
-La demostración utiliza StarUML como herramienta CASE para construir un modelo UML y generar automáticamente código fuente C#. El proceso comprende el modelado, configuración del generador, generación del código, compilación, ejecución y regeneración controlada.
+La demostración no abarca todo el sistema del gimnasio. Se utiliza un subsistema representativo relacionado con clientes, planes, membresías, pagos y comprobantes.
 
-## Proyecto Fin de Curso
+## Alcance del subsistema
 
-El Proyecto Fin de Curso corresponde a un **Sistema de Gestión para un Gimnasio**, diseñado para apoyar el control de clientes, membresías, pagos, productos, inventario, rutinas y demás operaciones relacionadas con la administración del establecimiento.
+El modelo contiene siete clases y dos enumeraciones:
 
-## Subsistema modelado
+- `Persona`
+- `Cliente`
+- `Empleado`
+- `PlanMembresia`
+- `Membresia`
+- `Pago`
+- `Comprobante`
+- `EstadoMembresia`
+- `MetodoPago`
 
-Para la demostración se seleccionó el subsistema de **gestión de clientes, membresías y pagos** del Sistema de Gestión para un Gimnasio. Este subsistema concentra los procesos necesarios para registrar a los clientes, administrar los planes disponibles, asignar y renovar membresías, controlar su vigencia y registrar los pagos realizados.
+Los elementos incorporan atributos tipados, operaciones con firma completa, visibilidad, herencia, asociaciones, composición y multiplicidades. El modelo fue validado en StarUML con el resultado **Validation Results - No Errors**.
 
-### Procesos principales
+## Integrantes y distribución de responsabilidades
 
-El subsistema comprende los siguientes procesos:
+| Integrante | Responsabilidad asignada | Participación en la demostración |
+|---|---|---|
+| Díaz Pontón Steven Santiago | Fundamentación MDE, MDA y MDD; revisión de referencias | Apertura del modelo y explicación general del diagrama |
+| Escudero Plaza María del Rosario | Revisión del modelo UML y de sus relaciones | Recorrido por el modelo, validación y selección del paquete |
+| Mera Arias Erick Jhair | Configuración y ajuste del generador C#; verificación técnica | Generación de archivos, compilación y ejecución en Visual Studio |
+| Mesías Quijije Jhon Alexander | Trazabilidad, evidencias y cierre del ciclo | Cambio del modelo, regeneración y comprobación del roundtrip |
 
-- Registrar y actualizar la información de los clientes.
-- Crear y consultar los planes de membresía disponibles.
-- Asignar y renovar membresías de acuerdo con el plan seleccionado.
-- Consultar el estado y la fecha de vencimiento de una membresía.
-- Registrar los pagos efectuados por los clientes.
-- Generar o asociar un comprobante al pago registrado.
+La autoría individual se verificará mediante commits realizados desde la cuenta GitHub de cada integrante y la captura de `Insights > Contributors`. Todos los integrantes deben conocer el flujo completo porque el docente puede formular preguntas individuales sobre cualquier etapa.
 
-El modelo UML estará conformado por clases relevantes del dominio, como `Cliente`, `Membresia`, `PlanMembresia`, `Pago`, `Comprobante` y `Empleado`. Estas clases contendrán atributos tipados, operaciones con firma completa, visibilidad, relaciones y cardinalidades coherentes con el funcionamiento del sistema.
+## Entorno utilizado
 
-A partir de este modelo se generará automáticamente código fuente C# mediante StarUML y posteriormente se verificará su compilación, ejecución y regeneración controlada.
-## Integrantes y responsabilidades
-
-| Integrante | Responsabilidad principal |
+| Componente | Versión o configuración |
 |---|---|
-| Díaz Pontón Steven Santiago | Fundamentación teórica y referencias |
-| Escudero Plaza María del Rosario | Construcción y validación del modelo UML |
-| Mera Arias Erick Jhair | Configuración del generador y generación de código |
-| Mesías Quijije Jhon Alexander | Compilación, roundtrip, evidencias y exposición |
+| Sistema operativo | Windows 11 de 64 bits |
+| StarUML | 7.1.0, modo de prueba |
+| Extensión C# para StarUML | 0.9.7 |
+| Visual Studio | Community 2026, versión 18.8.0 |
+| .NET SDK | 10.0.302 |
+| Framework de destino | `net10.0` |
+| Compilación del informe | PdfLaTeX + BibTeX |
 
-Las responsabilidades señaladas representan el liderazgo de cada fase. Todos los integrantes deben conocer el funcionamiento completo del proyecto y participar en la demostración.
+## Resultados obtenidos
 
-## Herramientas y versiones
-
-| Herramienta | Versión utilizada | Finalidad |
-|---|---:|---|
-| StarUML | [VERSIÓN EXACTA] | Construcción del modelo UML |
-| Extensión C# | [VERSIÓN EXACTA] | Generación de código C# |
-| Visual Studio | [VERSIÓN EXACTA] | Compilación y ejecución |
-| .NET SDK | [VERSIÓN EXACTA] | SDK y runtime de C# |
-| Git | [VERSIÓN EXACTA] | Control de versiones |
-| MiKTeX/TeX Live | [VERSIÓN EXACTA] | Compilación del informe LaTeX |
-| Windows | Windows 11 de 64 bits | Sistema operativo probado |
-
-> Las versiones deberán actualizarse con los valores exactos instalados en el equipo utilizado para la demostración.
-
-## Requisitos previos
-
-Para reproducir el proyecto se requiere:
-
-- Git.
-- StarUML.
-- Extensión de generación de código C# para StarUML.
-- .NET SDK.
-- Visual Studio o Visual Studio Code.
-- MiKTeX o TeX Live.
-- Compilador `pdflatex`, `xelatex` o `lualatex`.
-- Sistema operativo Windows 11 de 64 bits o compatible.
+- Modelo UML validado sin errores en StarUML.
+- Siete clases y dos enumeraciones transformadas en nueve archivos C#.
+- Proyecto de verificación recompilado correctamente con cero errores.
+- Ejecución de una unidad mínima demostrable con código de salida `0`.
+- Roundtrip controlado mediante la operación `suspender(motivo: string): void`.
+- Regeneración confirmada mediante la aparición del método `suspender` en `Membresia.cs`.
+- El generador no informó un tiempo propio de generación. Los nueve archivos quedaron registrados con la misma marca de tiempo.
+- Visual Studio registró aproximadamente `3,888 s` para la recompilación completa y `0,061 s` para una compilación incremental posterior.
 
 ## Estructura del repositorio
 
 ```text
 GA_Exposicion_Segundo_Corte/
-├── README.md
-├── docs/
-│   ├── informe.tex
-│   ├── informe.pdf
-│   ├── referencias.bib
-│   └── figuras/
-├── modelo/
-│   ├── proyecto_staruml.mdj
-│   └── perfiles/
-├── plantillas/
-│   └── configuracion_generador.md
-├── generado/
-│   └── codigo-csharp/
-├── verificacion/
-│   └── proyecto-prueba/
-├── evidencias/
-│   ├── capturas/
-│   └── video-demo.md
-└── exposicion/
-    └── diapositivas.pdf
+|-- README.md
+|-- docs/
+|   |-- Informe_MDD_StarUML_Actualizado.tex
+|   |-- Informe_MDD_StarUML_Actualizado.pdf
+|   |-- referencias.bib
+|   `-- figuras/
+|-- modelo/
+|   `-- modelo_subsistema_gimnasio_final.mdj
+|-- plantillas/
+|   |-- code-generator.js
+|   |-- configuracion_generador.md
+|   `-- mapeo_uml_csharp.md
+|-- generado/
+|   |-- codigo-csharp/
+|   `-- roundtrip/
+|       |-- antes/
+|       `-- despues/
+|-- verificacion/
+|   `-- VerificacionGimnasioLimpio/
+|-- evidencias/
+|   |-- capturas/
+|   `-- video-demo.md
+`-- exposicion/
+    `-- diapositivas.pdf
 ```
 
-## Instrucciones para clonar el repositorio
-
-Abrir una terminal y ejecutar:
+## Clonar el repositorio
 
 ```bash
 git clone https://github.com/Erick-Mera/GA_Exposicion_Segundo_Corte.git
 cd GA_Exposicion_Segundo_Corte
 ```
 
-## Instrucciones para abrir el modelo
+## Abrir y validar el modelo
 
-1. Instalar StarUML versión `[VERSIÓN]`.
-2. Instalar la extensión C# versión `[VERSIÓN]`.
-3. Abrir StarUML.
-4. Seleccionar `File > Open`.
-5. Abrir el archivo:
+1. Instalar StarUML 7.1.0.
+2. Instalar la extensión C# 0.9.7 desde `Tools > Extension Manager`.
+3. Abrir StarUML y seleccionar `File > Open`.
+4. Abrir el archivo:
 
 ```text
-modelo/proyecto_staruml.mdj
+modelo/modelo_subsistema_gimnasio_final.mdj
 ```
 
-6. Localizar el diagrama de clases del subsistema seleccionado.
-7. Verificar las clases, atributos, operaciones, relaciones y cardinalidades.
+5. Abrir el diagrama `GestionClientesMembresiasPagos`.
+6. Comprobar las clases, enumeraciones, atributos, operaciones, relaciones y multiplicidades.
+7. Ejecutar la validación y comprobar el mensaje `Validation Results - No Errors`.
 
-## Instrucciones para generar el código
+## Generar el código C#
 
-1. Abrir el archivo nativo `.mdj`.
-2. Seleccionar el modelo o paquete correspondiente.
-3. Ejecutar el comando de generación de la extensión C#.
+1. Abrir el modelo nativo `.mdj`.
+2. Ejecutar el comando de generación de la extensión C#.
+3. Seleccionar como modelo base el paquete `Gimnasio.Dominio`.
 4. Seleccionar como directorio de salida:
 
 ```text
@@ -139,111 +135,142 @@ generado/codigo-csharp/
 ```
 
 5. Ejecutar la generación.
-6. Comprobar que se crearon los archivos `.cs`.
-7. Revisar el registro o resultado de la generación.
+6. Comprobar la creación de los nueve archivos `.cs`.
 
-La configuración empleada está documentada en:
-
-```text
-plantillas/configuracion_generador.md
-```
-
-## Compilación y ejecución del código
-
-El código generado se verifica mediante el proyecto ubicado en:
+Archivos esperados:
 
 ```text
-verificacion/proyecto-prueba/
+Cliente.cs
+Comprobante.cs
+Empleado.cs
+EstadoMembresia.cs
+Membresia.cs
+MetodoPago.cs
+Pago.cs
+Persona.cs
+PlanMembresia.cs
 ```
 
-Para compilar y ejecutar:
+La configuración, la plantilla utilizada y las decisiones de mapeo se documentan en `plantillas/`.
+
+## Correspondencia UML a C#
+
+| Elemento del modelo | Resultado generado |
+|---|---|
+| Clase UML | Clase y archivo `.cs` |
+| Atributo tipado | Campo con tipo C# |
+| Operación UML | Método C# con parámetros y retorno |
+| Generalización | Herencia de clase |
+| Multiplicidad múltiple | Colección tipada |
+| Enumeración UML | `enum` de C# |
+
+## Compilar y ejecutar
+
+El proyecto utilizado para verificar el código se encuentra en:
+
+```text
+verificacion/VerificacionGimnasioLimpio/
+```
+
+Desde una terminal:
 
 ```bash
-cd verificacion/proyecto-prueba
+cd verificacion/VerificacionGimnasioLimpio
 dotnet restore
 dotnet build
 dotnet run
 ```
 
-La compilación debe finalizar sin errores y ejecutar al menos una unidad mínima demostrable.
+El resultado comprobado fue una recompilación correcta con cero errores y una ejecución terminada con código `0`. Pueden aparecer advertencias `CS0169` porque el generador crea campos privados que todavía no son utilizados por la unidad mínima de verificación.
 
-## Regeneración controlada o roundtrip
+`Program.cs` fue incorporado manualmente para instanciar y relacionar las clases. Los nueve archivos del dominio fueron generados por StarUML y se mantienen separados del código escrito manualmente.
 
-Para cerrar el ciclo MDD se realizará un cambio significativo en el modelo UML. Posteriormente, se regenerará el código y se verificará que el cambio aparezca en el archivo C# correspondiente.
+## Roundtrip controlado
 
-El cambio seleccionado será:
+El cierre del ciclo se comprobó mediante un cambio significativo en la clase `Membresia`:
 
-- **Elemento modificado:** [CLASE, OPERACIÓN, ATRIBUTO O RELACIÓN].
-- **Estado inicial:** [DESCRIBIR].
-- **Cambio realizado:** [DESCRIBIR].
-- **Resultado esperado:** [DESCRIBIR].
+- **Estado inicial:** `Membresia.cs` no contenía una operación para suspender la membresía.
+- **Cambio en StarUML:** se agregó `+suspender(motivo: string): void`.
+- **Regeneración:** se ejecutó nuevamente el generador sobre el paquete `Gimnasio.Dominio`.
+- **Resultado:** apareció `public void suspender(string motivo)` en `Membresia.cs`.
+- **Verificación final:** el proyecto volvió a compilar con cero errores.
 
-Las capturas del antes y después se encuentran en:
+Las versiones del código anterior y posterior se conservan en:
+
+```text
+generado/roundtrip/antes/
+generado/roundtrip/despues/
+```
+
+La extensión sobrescribe los archivos generados al regenerar. Por este motivo, la lógica escrita manualmente debe mantenerse separada o respaldarse antes de una nueva generación.
+
+## Ajustes realizados al generador
+
+La extensión C# 0.9.7 produjo inicialmente construcciones incompatibles con el compilador utilizado. Para garantizar una generación compilable se documentaron y aplicaron los siguientes ajustes en `code-generator.js`:
+
+- Se sustituyó `False` por el literal válido de C# `false`.
+- Los métodos declarados como `void` dejaron de generar `return null;`.
+- Los retornos de tipo `DateTime` utilizan `default(DateTime)` en el esqueleto generado.
+- La configuración del proyecto de verificación evita tratar las advertencias de nulabilidad como errores de compilación.
+
+La plantilla ajustada debe conservarse en `plantillas/code-generator.js` para que el procedimiento sea reproducible.
+
+## Limitaciones identificadas
+
+- La extensión genera principalmente la estructura de clases, campos, relaciones y métodos; no implementa la lógica de negocio completa.
+- StarUML genera archivos fuente, pero no crea por sí solo una solución ejecutable completa con `Program.cs` y archivo `.csproj`.
+- La extensión C# 0.9.7 requirió ajustes de compatibilidad para producir código compilable con .NET 10.
+- Las operaciones generadas contienen esqueletos o valores predeterminados que deben implementarse manualmente.
+- La regeneración puede sobrescribir modificaciones hechas directamente en los archivos generados.
+- El generador no mostró un log con el tiempo exacto de generación.
+
+## Compilar el informe LaTeX
+
+El archivo principal es:
+
+```text
+docs/Informe_MDD_StarUML_Actualizado.tex
+```
+
+Compilación probada:
+
+```bash
+cd docs
+pdflatex Informe_MDD_StarUML_Actualizado.tex
+bibtex Informe_MDD_StarUML_Actualizado
+pdflatex Informe_MDD_StarUML_Actualizado.tex
+pdflatex Informe_MDD_StarUML_Actualizado.tex
+```
+
+El resultado es `docs/Informe_MDD_StarUML_Actualizado.pdf`.
+
+## Evidencias
+
+Las capturas del entorno, validación, generación, archivos creados, compilación, ejecución y roundtrip se organizan en:
 
 ```text
 evidencias/capturas/
 ```
 
-## Compilación del informe LaTeX
-
-El archivo principal del informe es:
-
-```text
-docs/informe.tex
-```
-
-Para compilarlo con `pdflatex` y BibTeX:
-
-```bash
-cd docs
-pdflatex informe.tex
-bibtex informe
-pdflatex informe.tex
-pdflatex informe.tex
-```
-
-Este procedimiento genera:
-
-```text
-docs/informe.pdf
-```
-
-Si el equipo utiliza `xelatex`, `lualatex` o `biber`, estos comandos deberán actualizarse con el procedimiento realmente probado.
-
 ## Video de respaldo
 
-El video de respaldo de la generación, compilación y regeneración controlada se encuentra disponible en:
+**Pendiente:** el video de respaldo de la generación, compilación y roundtrip se incorporará en `evidencias/video-demo.md` o se enlazará desde esta sección antes de la exposición.
 
-[COLOCAR ENLACE DEL VIDEO]
+La grabación deberá mostrar, como mínimo:
 
-También puede consultarse en:
+1. Apertura del modelo en StarUML.
+2. Selección de `Gimnasio.Dominio`.
+3. Generación de los nueve archivos C#.
+4. Compilación y ejecución del proyecto.
+5. Cambio en el modelo, regeneración y verificación del roundtrip.
 
-```text
-evidencias/video-demo.md
-```
+## Informe y presentación
 
-## Evidencia de participación
-
-La participación individual se evidencia mediante:
-
-- Commits diferenciados por integrante.
-- Archivos aportados por cada estudiante.
-- Responsabilidades declaradas.
-- Participación durante la exposición.
-- Captura de `Insights > Contributors`.
-- Enlaces a los commits incluidos en el informe LaTeX.
-
-## Limitaciones identificadas
-
-- [LIMITACIÓN DEL GENERADOR 1].
-- [LIMITACIÓN DEL GENERADOR 2].
-- [LIMITACIÓN DEL ROUNDTRIP].
-- [ELEMENTOS QUE REQUIEREN IMPLEMENTACIÓN MANUAL].
+- Informe LaTeX: `docs/Informe_MDD_StarUML_Actualizado.tex`.
+- Informe compilado: `docs/Informe_MDD_StarUML_Actualizado.pdf`.
+- Referencias: `docs/referencias.bib`.
+- Diapositivas finales: `exposicion/diapositivas.pdf`.
 
 ## Referencias
 
-Las referencias académicas, estándares y documentación técnica utilizada se encuentran en:
-
-```text
-docs/referencias.bib
-```
+Las fuentes académicas, estándares y documentación técnica empleada están registradas en `docs/referencias.bib`.
