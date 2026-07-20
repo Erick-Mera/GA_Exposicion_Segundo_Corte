@@ -6,7 +6,7 @@ Repositorio de la exposición-demostración del ciclo de desarrollo dirigido por
 
 - **Universidad:** Universidad Técnica Estatal de Quevedo
 - **Carrera:** Ingeniería en Software
-- **Asignatura:** Ingeniería de Requisitos (ISR-401)
+- **Asignatura:** Ingeniería de Requerimientos
 - **Docente:** Ing. Gleiston Guerrero Ulloa, PhD.
 - **Periodo académico:** 2026-2027 PPA
 - **Paralelo:** 4.º Software A
