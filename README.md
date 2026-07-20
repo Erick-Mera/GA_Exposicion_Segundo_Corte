@@ -46,8 +46,6 @@ Los elementos incorporan atributos tipados, operaciones con firma completa, visi
 | Mera Arias Erick Jhair | Configuración y ajuste del generador C#; verificación técnica | Generación de archivos, compilación y ejecución en Visual Studio |
 | Mesías Quijije Jhon Alexander | Trazabilidad, evidencias y cierre del ciclo | Cambio del modelo, regeneración y comprobación del roundtrip |
 
-La autoría individual se verificará mediante commits realizados desde la cuenta GitHub de cada integrante y la captura de `Insights > Contributors`. Todos los integrantes deben conocer el flujo completo porque el docente puede formular preguntas individuales sobre cualquier etapa.
-
 ## Entorno utilizado
 
 | Componente | Versión o configuración |
