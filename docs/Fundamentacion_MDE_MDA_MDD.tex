@@ -1,0 +1,133 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\geometry{top=2.5cm,bottom=2.5cm,left=3cm,right=2.5cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.7em}
+\renewcommand{\arraystretch}{1.25}
+
+\title{Fundamentación teórica: MDE, MDA, MDD, CIM, PIM, PSM, M2M y M2T}
+\author{Steven}
+\date{2026}
+
+\begin{document}
+
+\maketitle
+
+\section{Ingeniería Dirigida por Modelos (MDE)}
+
+En primer lugar, la \textit{Model-Driven Engineering} (MDE), o Ingeniería Dirigida por Modelos, es un enfoque amplio de ingeniería de software en el que los modelos constituyen artefactos principales del proceso de desarrollo. En consecuencia, los modelos no se utilizan únicamente para representar gráficamente un sistema, sino también para analizarlo, validarlo y producir otros artefactos mediante transformaciones definidas. Esta orientación permite trabajar con niveles de abstracción superiores al código fuente y facilita la comunicación, la reutilización y la automatización del desarrollo \cite{brambilla2017}.
+
+Asimismo, un proceso MDE se apoya en lenguajes de modelado, metamodelos, restricciones y transformaciones. El metamodelo define los elementos y reglas con los que puede construirse un modelo, mientras que las transformaciones establecen cómo convertirlo en otro modelo o en un artefacto textual. Por ello, la automatización no depende solamente de dibujar diagramas, sino de crear modelos estructurados y procesables por herramientas de software.
+
+\section{Arquitectura Dirigida por Modelos (MDA)}
+
+Por su parte, la \textit{Model-Driven Architecture} (MDA), o Arquitectura Dirigida por Modelos, es una propuesta de la Object Management Group (OMG) que concreta los principios de la orientación a modelos. MDA organiza la descripción del sistema mediante distintos puntos de vista y separa la lógica esencial del negocio de los detalles tecnológicos de implementación \cite{omg2014mda}.
+
+En este sentido, MDA propone representar progresivamente el sistema mediante los niveles CIM, PIM y PSM. Esta separación permite que una misma descripción funcional pueda adaptarse a diferentes plataformas sin reconstruir completamente el sistema. Por tanto, MDA puede entenderse como un marco específico dentro del campo más amplio de MDE.
+
+\section{Desarrollo Dirigido por Modelos (MDD)}
+
+De manera complementaria, el \textit{Model-Driven Development} (MDD), o Desarrollo Dirigido por Modelos, se concentra en aplicar los modelos de forma operativa durante la construcción del software. Su propósito es que una parte significativa de los artefactos del sistema se obtenga mediante transformaciones reproducibles, en lugar de elaborarse completamente de forma manual \cite{brambilla2017}.
+
+En consecuencia, MDD utiliza los modelos como fuente para generar otros modelos, código, configuraciones o documentación. A diferencia de MDE, que comprende una visión general de ingeniería, MDD enfatiza el proceso práctico de desarrollo. Por otra parte, MDA constituye una forma estandarizada de organizar ese proceso mediante niveles de abstracción y transformaciones.
+
+\section{Niveles de abstracción en MDA}
+
+\subsection{Modelo Independiente de la Computación (CIM)}
+
+Inicialmente, el \textit{Computation Independent Model} (CIM), o Modelo Independiente de la Computación, representa el contexto del negocio, sus objetivos, procesos, actores, necesidades y reglas, sin describir todavía cómo se construirá el sistema informático. Este modelo se concentra en el problema y en el entorno de la organización, por lo que sirve como enlace entre los participantes del dominio y el equipo de desarrollo \cite{omg2014mda}.
+
+Por ejemplo, en un sistema de gestión de gimnasio, el CIM puede describir la necesidad de registrar clientes, controlar membresías y recibir pagos, sin especificar clases de software, lenguaje de programación o base de datos.
+
+\subsection{Modelo Independiente de la Plataforma (PIM)}
+
+Posteriormente, el \textit{Platform Independent Model} (PIM), o Modelo Independiente de la Plataforma, describe la estructura y el comportamiento del sistema sin comprometerse con una tecnología específica. En este nivel pueden definirse clases, atributos, operaciones, relaciones, servicios y reglas del dominio, manteniendo la solución separada de detalles como C\#, Java, .NET o un sistema gestor de bases de datos determinado \cite{omg2014mda}.
+
+Así, un diagrama de clases UML que represente las entidades \texttt{Cliente}, \texttt{Membresia}, \texttt{PlanMembresia} y \texttt{Pago} puede actuar como PIM cuando expresa la lógica del dominio sin incorporar decisiones exclusivas de una plataforma.
+
+\subsection{Modelo Específico de la Plataforma (PSM)}
+
+Finalmente, el \textit{Platform Specific Model} (PSM), o Modelo Específico de la Plataforma, combina la descripción funcional procedente del PIM con las características de una tecnología concreta. En este nivel se incorporan decisiones relacionadas con el lenguaje de programación, bibliotecas, tipos de datos, mecanismos de persistencia, marcos de trabajo y reglas de despliegue \cite{omg2014mda}.
+
+En consecuencia, un modelo adaptado para generar clases C\# compatibles con .NET constituye un PSM, porque conserva la estructura del dominio e incorpora elementos propios de esa plataforma. El PSM se encuentra más próximo a la implementación que el CIM y el PIM.
+
+\begin{table}[htbp]
+\centering
+\caption{Comparación entre CIM, PIM y PSM}
+\label{tab:cim-pim-psm}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.1cm}
+                >{\raggedright\arraybackslash}p{4.1cm}
+                >{\raggedright\arraybackslash}p{6.1cm}}
+\toprule
+\textbf{Nivel} & \textbf{Pregunta principal} & \textbf{Contenido predominante} \\
+\midrule
+CIM & ¿Qué necesita la organización? & Objetivos, actores, procesos, necesidades y reglas del negocio. \\
+PIM & ¿Cómo funciona la solución sin elegir tecnología? & Estructura, comportamiento, servicios y relaciones independientes de una plataforma. \\
+PSM & ¿Cómo se implementará en una plataforma concreta? & Lenguaje, tipos de datos, bibliotecas, persistencia, configuración y despliegue. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Transformación Modelo a Modelo (M2M)}
+
+Además, una transformación \textit{Model-to-Model} (M2M), o Modelo a Modelo, recibe uno o varios modelos como entrada y produce otro modelo como salida. Tanto el modelo origen como el modelo destino deben ajustarse a sus respectivos metamodelos. En MDA, este tipo de transformación puede utilizarse para pasar de un PIM a un PSM o para refinar un modelo dentro del mismo nivel de abstracción.
+
+De acuerdo con la especificación QVT de OMG, las transformaciones de modelos pueden expresarse mediante relaciones o mapeos que establecen correspondencias entre los elementos de los modelos participantes \cite{omg2016qvt}. Por ejemplo, una clase independiente de plataforma puede transformarse en una clase específica para .NET, conservando sus atributos y operaciones, pero adaptando sus tipos de datos a C\#.
+
+\section{Transformación Modelo a Texto (M2T)}
+
+En cambio, una transformación \textit{Model-to-Text} (M2T), o Modelo a Texto, toma un modelo como entrada y genera artefactos textuales. Entre sus posibles salidas se encuentran archivos de código fuente, scripts, documentos, archivos de configuración y especificaciones de despliegue. La especificación MOFM2T señala que las plantillas contienen texto fijo y espacios que se completan con información extraída del modelo \cite{omg2008m2t}.
+
+Por consiguiente, cuando una herramienta procesa un modelo UML y genera archivos con extensión \texttt{.cs}, se ejecuta una transformación M2T. La salida ya no es otro modelo UML, sino texto estructurado conforme a la sintaxis de C\#. No obstante, la generación automática puede producir únicamente el esqueleto de clases y operaciones; la lógica específica del negocio puede requerir programación adicional.
+
+\section{Relación entre los conceptos}
+
+En síntesis, MDE constituye el enfoque general que sitúa los modelos en el centro de la ingeniería de software; MDA organiza ese enfoque mediante los niveles CIM, PIM y PSM; y MDD aplica los modelos y sus transformaciones durante el desarrollo. Dentro de este proceso, M2M permite obtener un modelo a partir de otro, mientras que M2T transforma un modelo en código u otro artefacto textual.
+
+Por tanto, la secuencia conceptual puede expresarse de la siguiente manera:
+
+\begin{center}
+\fbox{CIM $\longrightarrow$ PIM $\xrightarrow{\text{M2M}}$ PSM $\xrightarrow{\text{M2T}}$ código o texto}
+\end{center}
+
+Esta secuencia no implica que todos los proyectos deban ejecutar automáticamente cada transición. Más bien, representa una organización de niveles y transformaciones que permite mantener separadas las necesidades del negocio, el diseño independiente de tecnología y las decisiones concretas de implementación.
+
+\begin{thebibliography}{9}
+
+\bibitem{brambilla2017}
+Brambilla, M., Cabot, J., \& Wimmer, M. (2017).
+\textit{Model-driven software engineering in practice} (2.\textsuperscript{a} ed.).
+Morgan \& Claypool Publishers.
+\url{https://doi.org/10.2200/S00751ED2V01Y201701SWE004}
+
+\bibitem{omg2014mda}
+Object Management Group. (2014).
+\textit{MDA guide revision 2.0} (Documento ormsc/14-06-01).
+\url{https://www.omg.org/cgi-bin/doc?ormsc/14-06-01}
+
+\bibitem{omg2016qvt}
+Object Management Group. (2016).
+\textit{Meta Object Facility (MOF) 2.0 Query/View/Transformation specification} (Versión 1.3).
+\url{https://www.omg.org/spec/QVT/1.3/PDF}
+
+\bibitem{omg2008m2t}
+Object Management Group. (2008).
+\textit{MOF Model to Text Transformation Language} (Versión 1.0).
+\url{https://www.omg.org/spec/MOFM2T/1.0/PDF}
+
+\end{thebibliography}
+
+\end{document}
